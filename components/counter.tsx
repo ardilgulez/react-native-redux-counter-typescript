@@ -18,11 +18,13 @@ interface CounterProps {
 const Counter = ({ handleIncrease, handleDecrease, count }: CounterProps) => (
     <View style={styles.container}>
         <CounterButton onClick={handleIncrease}>
-            <Text>+</Text>
+            <Text style={styles.text}>+</Text>
         </CounterButton>
-        <CounterText>{count}</CounterText>
+        <CounterText>
+            <Text style={styles.text}>{count}</Text>
+        </CounterText>
         <CounterButton onClick={handleDecrease}>
-            <Text>-</Text>
+            <Text style={styles.text}>-</Text>
         </CounterButton>
     </View>
 );
@@ -33,6 +35,9 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         alignItems: "center",
         justifyContent: "center",
+    },
+    text: {
+        fontSize: 36,
     },
 });
 
